@@ -1,0 +1,43 @@
+# Python bytecode files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.tgz
+*.zip
+*.tar
+
+# Virtual environment directory
+venv/
+env/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Database files (SQLite)
+db/nutrition_tracker.db
+*.sqlite
+*.sqlite3
+
+# Logs
+*.log
+
+# IDE and editor files (e.g., VSCode, PyCharm)
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Other files you might not want to track
+*.bak
+*.swp
+*.swo
