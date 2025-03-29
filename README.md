@@ -7,7 +7,9 @@
 4. within project, open a terminal
 5. install node.js and npm: https://nodejs.org/en/download/ 
 6. install necessary npm packages `npm i`
-7. run commands in terminal:
+7. install react-router-dom `npm install react-router-dom`
+8. install material-ui `npm install @mui/material @emotion/react @emotion/styled`
+9. run commands in terminal:
     1. `cd nutrition_tracker`
     2. `cd frontend`
     3. `npm start`
