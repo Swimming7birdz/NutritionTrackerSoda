@@ -56,3 +56,10 @@ class MealEntry(Base):
 
     __table_args__ = (Index('idx_meal_id', 'meal_id'), Index('idx_food_id', 'food_id'))
 
+#run the following lines if running for the first time or want to recreate the whole Database
+#engine = create_engine("sqlite:///nutrition_tracker.db")
+#Base.metadata.create_all(engine)
+
+#to drop all tables:
+#Base.metadata.drop_all(engine)
+
