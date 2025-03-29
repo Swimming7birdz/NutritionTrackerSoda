@@ -6,7 +6,8 @@
 3. copy link to this repo: 'https://github.com/Swimming7birdz/NutritionTrackerSoda.git' 
 4. within project, open a terminal
 5. install node.js and npm: https://nodejs.org/en/download/ 
-6. run commands in terminal:
+6. install necessary npm packages `npm i`
+7. run commands in terminal:
     1. `cd nutrition_tracker`
     2. `cd frontend`
     3. `npm start`
@@ -33,3 +34,4 @@
     1. go to your branch `git checkout <branch name>` 
     2. merge your branch with main `git merge main` 
 6. resolve any merge conflicts
+7. install necessary npm packages `npm i`
