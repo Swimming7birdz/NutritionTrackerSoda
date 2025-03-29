@@ -4,7 +4,7 @@ api_key = "Z2WNVBjsRTheG0X19QRhwYZvuofO9bEtODB9IWXn"
 
 params = {
     "api_key": api_key, 
-    "query": "orange",
+    "query": "grape fruit",
     "pageSize": 1
 }
 
