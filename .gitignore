@@ -11,13 +11,13 @@ __pycache__/
 # Virtual environment directory
 venv/
 env/
-.venv/
+backend/.venv/
 ENV/
 env.bak/
 venv.bak/
 
 # Database files (SQLite)
-db/nutrition_tracker.db
+backend/nutrition_tracker.db
 *.sqlite
 *.sqlite3
 

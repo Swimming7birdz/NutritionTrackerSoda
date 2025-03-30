@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, Text, Float, ForeignKey, Date, Index
 from sqlalchemy.orm import relationship, declarative_base, column_property
-from sqlalchemy import create_engine
+#from sqlalchemy import create_engine
 
 Base = declarative_base()
 
