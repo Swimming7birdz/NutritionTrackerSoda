@@ -1,5 +1,5 @@
-from flask import Flask
-#from flask_cors import CORS
+from flask import Flask, jsonify
+from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 from routes.users import user_bp
 from routes.meals import meal_bp
@@ -19,6 +19,11 @@ params = {
 base_url = f"https://api.nal.usda.gov/fdc/v1/foods/search?"
 
 app = Flask(__name__)
+CORS(app)
+
+@app.route('/api/daily', methods=['GET'])
+def get_daily_data():
+    return jsonify({"message": "Hello from the backend!"})
 
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///nutrition_tracker.db"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
