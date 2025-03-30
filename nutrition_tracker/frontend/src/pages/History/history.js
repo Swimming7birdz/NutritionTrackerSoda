@@ -5,7 +5,17 @@ import { useNavigate } from "react-router-dom";
 function History(){
     let navigate = useNavigate();
     return (
-        <div>
+        <div
+
+            style={{
+                display: "flex",
+                flexDirection: "column",
+                backgroundColor: "#DBDADA",
+                padding: 50,
+                gap: 50,
+            }}
+        
+        >
             <h1>History</h1>
 
             <div>
