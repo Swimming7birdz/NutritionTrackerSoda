@@ -32,7 +32,7 @@ class FoodItem(Base):
     calories = Column(Float, nullable=False)
     protein = Column(Float, nullable=False)
     total_fat = Column(Float, nullable=False)
-    carbs = Column(Float, nullable=False)
+    total_carbs = Column(Float, nullable=False)
     sugar = Column(Float, nullable=False)
 
     meal_entries = relationship("MealEntry", back_populates="food_item")
@@ -45,16 +45,22 @@ class MealEntry(Base):
     food_id = Column(Integer, ForeignKey("food_items.food_id"), nullable=False)
     quantity = Column(Float, nullable=False)
 
-    calories = column_property((FoodItem.calories * quantity) / 100)
-    protein = column_property((FoodItem.protein * quantity) / 100)
-    carbs = column_property((FoodItem.carbs * quantity) / 100)
-    total_fat = column_property((FoodItem.total_fat * quantity) / 100)
-    sugar = column_property((FoodItem.sugar * quantity) / 100)
-
     meal = relationship("UserMeal", back_populates="meal_entries")
     food_item = relationship("FoodItem", back_populates="meal_entries")
 
     __table_args__ = (Index('idx_meal_id', 'meal_id'), Index('idx_food_id', 'food_id'))
+
+    def get_nutritional_values(self):
+        """Returns the computed nutritional values based on the quantity."""
+        if self.food_item:
+            return {
+                "calories": (self.food_item.calories * self.quantity) / 100,
+                "protein": (self.food_item.protein * self.quantity) / 100,
+                "total_fat": (self.food_item.total_fat * self.quantity) / 100,
+                "total_carbs": (self.food_item.total_carbs * self.quantity) / 100,
+                "sugar": (self.food_item.sugar * self.quantity) / 100
+            }
+        return {"calories": 0, "protein": 0, "total_fat": 0, "total_carbs": 0, "sugar": 0}
 
 #run the following lines if running for the first time or want to recreate the whole Database
 #engine = create_engine("sqlite:///nutrition_tracker.db")

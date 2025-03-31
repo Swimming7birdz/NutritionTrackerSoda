@@ -1,6 +1,6 @@
 from flask import Flask
 #from flask_cors import CORS
-from flask_sqlalchemy import SQLAlchemy
+from db_setup import db
 from routes.users import user_bp
 from routes.meals import meal_bp
 from routes.food_items import food_bp
@@ -23,7 +23,6 @@ app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///nutrition_tracker.db"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
-db = SQLAlchemy()
 db.init_app(app)
 
 
@@ -36,4 +35,4 @@ with app.app_context():
     db.create_all()
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=8000)
