@@ -3,9 +3,13 @@ import { TextField, Button, Typography } from '@mui/material';
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-function Daily(){
+function View_Daily(){
     const [data, setData] = useState(null);
     let navigate = useNavigate();
+
+    //get entry from URL
+    // const urlParameters = new URLSearchParams(location.search);
+    // const entryID = urlParameters.get("entryID");
 
     useEffect(() => {
         axios
@@ -24,7 +28,7 @@ function Daily(){
                 gap: 50,
             }}
         >
-            <h1>Daily</h1>
+            <h1>View Daily</h1>
 
             <div>
                 <Button
@@ -40,4 +44,4 @@ function Daily(){
         </div>
     );
 }
-export default Daily;
+export default View_Daily;

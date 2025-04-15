@@ -1,30 +1,40 @@
 import React, { useEffect, useState } from 'react';
 import { TextField, Button, Typography } from '@mui/material';
 import { useNavigate } from "react-router-dom";
+import "./history.css";
 
 function History(){
     let navigate = useNavigate();
+
     return (
-        <div
+        <div className ="history_container">
+             <Typography
+                variant="h1"
+                sx={{ fontWeight: "bold", fontSize: "2rem", textAlign: "left", color: "white" }}
+            >
+                The Break Down 📊
+            </Typography>
 
-            style={{
-                display: "flex",
-                flexDirection: "column",
-                backgroundColor: "#DBDADA",
-                padding: 50,
-                gap: 50,
-            }}
-        
-        >
-            <h1>History</h1>
 
-            <div>
-                <Button
-                    onClick={() => navigate("/profile")}
-                >
-                    Back
-                </Button>
+            <div className="content_container">
+                <div className="back_button">
+                    <Button
+                        variant="contained"
+                        sx={{
+                            backgroundColor: "black", // Button background color
+                            color: "white",           // Text color
+                            '&:hover': {
+                                backgroundColor: "grey", // Optional: Change color on hover
+                            },
+                        }}
+                        onClick={() => navigate("/profile")}
+                    >
+                        Back
+                    </Button>
+                </div>
+
             </div>
+           
         </div>
     );
 }
