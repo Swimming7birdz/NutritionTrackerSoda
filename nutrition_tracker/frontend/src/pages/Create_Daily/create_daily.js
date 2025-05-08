@@ -43,7 +43,20 @@ function Create_Daily(){
         const protein = data.labelNutrients.protein && data.labelNutrients.protein.value !== undefined
             ? data.labelNutrients.protein.value
             : "NA";
-        const nutrition = {"calories": cals, "protein": protein};
+        
+        const carbohydrates = data.labelNutrients.carbohydrates && data.labelNutrients.carbohydrates.value !== undefined
+            ? data.labelNutrients.carbohydrates.value
+            : "NA";
+
+        const fat = data.labelNutrients.fat && data.labelNutrients.fat.value !== undefined
+            ? data.labelNutrients.fat.value
+            : "NA";
+
+        const sugar = data.labelNutrients.sugars && data.labelNutrients.sugars.value !== undefined
+            ? data.labelNutrients.sugars.value
+            : "NA";
+        
+        const nutrition = {"calories": cals, "protein": protein, "carbohydrates": carbohydrates, "fat": fat, "sugar": sugar};
         return nutrition;
     }
 
